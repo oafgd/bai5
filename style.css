@@ -1,0 +1,194 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+/* =========================
+           MỨC 1: HEADER - NAV - CONTENT - FOOTER
+           ========================= */
+
+header {
+    background: #0b5fa5;
+    color: white;
+    text-align: center;
+    padding: 28px 20px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+}
+
+header p {
+    margin: 0;
+}
+
+nav {
+    background: #083f70;
+    text-align: center;
+    padding: 14px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+           MỨC 2: CONTENT 2 CỘT
+           ========================= */
+
+.content {
+    width: 92%;
+    max-width: 1200px;
+    margin: 24px auto;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    /* 75% - 25% */
+    gap: 20px;
+}
+
+main {
+    min-width: 0;
+}
+
+article {
+    position: relative;
+    /* Làm mốc cho badge NEW */
+    background: white;
+    padding: 20px;
+    border: 1px solid #d7dce1;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+article h2 {
+    margin-top: 0;
+    color: #0b5fa5;
+}
+
+article p {
+    line-height: 1.6;
+}
+
+aside {
+    background: white;
+    padding: 20px;
+    border: 1px solid #d7dce1;
+    border-radius: 6px;
+    height: fit-content;
+}
+
+aside h3 {
+    margin-top: 0;
+    color: #0b5fa5;
+    border-bottom: 2px solid #0b5fa5;
+    padding-bottom: 10px;
+}
+
+aside ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+aside li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+/* =========================
+           MỨC 3: BADGE NEW
+           ========================= */
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #e53935;
+    color: white;
+    padding: 5px 9px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+footer {
+    background: #083f70;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+/* Responsive đơn giản để trang không bị vỡ trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px 10px;
+    }
+}
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+}
+
+.menu > li {
+    position: relative;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content !important; 
+    min-width: 180px;
+    list-style: none;
+    margin: 0;
+    padding: 6px 0;
+    background-color: rgb(5, 63, 113) !important;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.submenu li {
+    display: block;
+    width: 100%;
+}
+
+.submenu li a {
+    display: block !important;
+    color: #ffffff !important;
+    padding: 10px 20px !important;
+    text-decoration: none;
+    white-space: nowrap !important; 
+    text-align: left !important;    
+}
+
+.submenu li a:hover {
+    background-color: rgb(69, 143, 204) !important;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
